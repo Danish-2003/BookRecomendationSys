@@ -70,3 +70,16 @@
     background-color: skyblue; /* Sky blue color */
     margin: 5px auto; /* Optional: space below the line */
 }
+
+
+@media (max-width: 992px) {
+    .nav-item{
+        margin-bottom: -30px;  /* Reduce the bottom margin */
+        padding-bottom: 10px;  /* Adjust padding if needed */
+    }
+
+    /* If your contact button is hidden, adjust its position */
+    .contact-btn {
+        margin-top: 10px; /* Adjust this value as needed */
+    }
+}
