@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+<style>
+            body {
+            background-color: #f9f9f9;
+        }
+        .contact-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color:  #b4cae7;
+            border: none;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .btn-submit:hover {
+            background-color: #e9bc36;
+        }
+</style>
+
+<body class="main_bg">
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/">
+                BOOK-RECOMMENDER
+            </a>
+    
+            <!-- Search Bar -->
+            <form class="form-inline mx-auto"  action="/recommend_books" method="post">
+                <input class="form-control" name="user_input" type="search" placeholder="Search book titles" aria-label="Search" style="width: 400px;" required="required">
+            </form>
+        </div>
+    </nav>
+    
+    <!-- Second Navbar with Links -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="margin-bottom: 10px;">
+        <div class="container">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="/" >Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/book_page" >Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommend" >Recommended</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/contact" style="color: #e9bc36;">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+      
+    
+
+    <div class="contact-container">
+        <h2>I'd Love to Hear From You!</h2>
+        <p>"Books are a uniquely portable magic." — Stephen King</p>
+
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="suggestion" class="form-label">Your Suggestion</label>
+                <textarea class="form-control" id="suggestion" name="suggestion" rows="5" placeholder="Enter your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+
+    
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <!-- Book Recommender Heading Row -->
+            <div class="row">
+                <div class="col-12">
+                    <h5>BOOK-RECOMMENDER</h5>
+                    <div class="underline"></div
+                </div>
+            </div>
+    
+            <!-- Page Links Row -->
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="/" class="text-light text-decoration-none link-hover">Home</a></li>
+                        <li class="list-inline-item"><a href="/book_page" class="text-light text-decoration-none link-hover">Books</a></li>
+                        <li class="list-inline-item"><a href="/recommend" class="text-light text-decoration-none link-hover">Recommendations</a></li>
+                        <li class="list-inline-item"><a href="/contact" class="text-light text-decoration-none link-hover">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright Row -->
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2024 BOOK-RECOMMENDER. All rights reserved.</p>
+                </div>
+            </div>
+        </div>    
+        <!-- Custom CSS -->
+        <style>
+            .link-hover:hover {
+                color: #8bb5ed;
+            }
+        </style>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

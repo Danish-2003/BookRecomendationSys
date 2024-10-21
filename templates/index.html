@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+
+<body class="main_bg">
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="/">
+              BOOK-RECOMMENDER
+            </a>
+    
+            <!-- Search Bar -->
+            <form class="form-inline mx-auto" name="user_input" action="/recommend_books" method="post">
+                <input class="form-control" name="user_input" type="search" placeholder="Search book titles" aria-label="Search" style="width: 400px;" required="required">
+            </form>
+        </div>
+    </nav>
+    
+    <!-- Second Navbar with Links -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="margin-bottom: 10px;">
+        <div class="container">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="/" style="color: #e9bc36;">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/book_page">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommend">Recommended</a></li>
+                <li class="nav-item"><a class="nav-link " href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel"> <!-- Ensure there's no data-bs-ride attribute -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/images/main.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/124383.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/124528.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <br>
+
+
+      
+      <div class="container" style="border: 2px solid rgb(255, 255, 255); background-color: white; border-radius: 10px;">
+        <div class="row" >
+            <div class="col-md-12">
+                <h2 style="margin: 10px 0 10px 0;">Top Rated Books </h2>
+            </div>
+
+          {% for index, book in books.iterrows() %}
+
+           <div class="col-md-3" style="margin-bottom: 40px;padding: 10px;">
+            <div class="card" style="width: 18rem; margin-left: 10px; border-radius: 0px; border: none;" >
+                <img src="{{ book['image'] }}" class="card-img-top" alt="{{ book['title'] }}" style="height: 350px; border-radius: 0px;  ">
+                <div class="card-body">
+                 <p style="font-size:large; font-weight: 500;">{{ book['title'] }}</p>
+                 <p style="line-height: 7px; font-size:small; font-weight: 500 ;">Author : {{ book['author'] }}</p>
+                 <p style="line-height: 3px; font-size:small; font-weight: 500 ;">Rating : {{book['avg_rating'] }}</p>
+                </div>
+              </div>
+           </div> 
+           {% endfor %} 
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+
+      <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <!-- Book Recommender Heading Row -->
+            <div class="row">
+                <div class="col-12">
+                    <h5>BOOK-RECOMMENDER</h5>
+                    <div class="underline"></div
+                </div>
+            </div>
+
+    
+            <!-- Page Links Row -->
+            <div class="row">
+                <div class="col-12">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="/" class="text-light text-decoration-none link-hover">Home</a></li>
+                        <li class="list-inline-item"><a href="/book_page" class="text-light text-decoration-none link-hover">Books</a></li>
+                        <li class="list-inline-item"><a href="/recommend" class="text-light text-decoration-none link-hover">Recommendations</a></li>
+                        <li class="list-inline-item"><a href="/contact" class="text-light text-decoration-none link-hover">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Copyright Row -->
+            <div class="row">
+                <div class="col-12">
+                    <p>&copy; 2024 BOOK-RECOMMENDER. All rights reserved.</p>
+                </div>
+            </div>
+        </div>    
+        <!-- Custom CSS -->
+        <style>
+            .link-hover:hover {
+                color: #8bb5ed;
+            }
+        </style>
+    </footer>
+    
+
+    <!-- Bootstrap JS and Popper.js -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

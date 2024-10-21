@@ -1,0 +1,72 @@
+/* Adjust logo font */
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8ed0f4;
+}
+.main_bg{
+    background-color: rgba(137, 160, 190, 0.2);
+}
+.navbar .form-control {
+    height: 50px;
+    border-radius: 40px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #76b0e3;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+    color: #a7dbdf;
+    border-bottom: 2px solid #52bffe;
+}
+
+.navbar{
+    height: 100px;
+    background-color: #b4cae7;
+    position: fixed;
+}
+
+/* Set a fixed height for the carousel */
+
+#carouselExample {
+    height: 650px; /* Change this to your desired height */
+}
+
+.carousel-item {
+    height: 600px; /* Make sure carousel items fill the height */
+}
+
+.carousel-item img {
+    height: 600px; /* Make images fill the carousel height */
+    width: 100%; /* Make images fill the carousel width */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for scale and shadow */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Enlarge the card slightly on hover */
+    box-shadow: 0 8px 30px rgba(91, 160, 252, 0.2); /* Add a shadow effect */
+    cursor: pointer;
+}
+
+.link-hover:hover {
+    color: #8bb5ed;
+}
+
+.underline {
+   
+    display: block; /* Makes the line occupy its own space */
+    width: 30%; /* Makes the line the same width as the text */
+    height: 1px; /* Line thickness */
+    background-color: skyblue; /* Sky blue color */
+    margin: 5px auto; /* Optional: space below the line */
+}
